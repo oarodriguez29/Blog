@@ -9,4 +9,10 @@ class Image extends Model
     // Tabla y Campos.
 	protected $table = "images";
 	protected $fillable = ['name', 'article_id'];
+
+	// Relacion Establecida para los Articulos e Imagenes.
+	public function article()
+	{
+		return $this->belongdTo('App\Article');
+	}
 }
