@@ -148,6 +148,10 @@ return [
          * Application Laravel/Collective...
          */
         Collective\Html\HtmlServiceProvider::class,
+        /*
+         * Providers Personal Sluggable...
+         */
+        Cviebrock\EloquentSluggable\ServiceProvider::class
 
     ],
 
