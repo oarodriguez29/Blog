@@ -15,7 +15,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Inicio</a></li>
-            <li><a href="#about">Usuarios</a></li>
+            <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
             <li><a href="#contact">Categorias</a></li>
             <li><a href="#article">Articulos</a></li>
             <li><a href="#image">Imagenes</a></li>
