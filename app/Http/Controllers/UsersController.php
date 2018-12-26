@@ -71,7 +71,10 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Obtengo el usuario con la busqueda.
+        $user = User::find($id);
+        // paso los datos a la vista 'edit'.
+        return view('admin.users.edit')->with('user',$user);
     }
 
     /**
@@ -83,7 +86,17 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Obtengo los Datos del usuario.
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->type = $request->type;        
+        $user->save(); // Guardo los datos en la BD.
+
+        // Mensaje de exito.
+        Flash::warning('El Usuario <b>'.$user->name.'</b> ha sido Actualizado con Exito!');
+        // retorno a la vista principal 'index'.
+        return redirect()->route('admin.users.index');
     }
 
     /**
