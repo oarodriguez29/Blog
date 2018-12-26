@@ -145,13 +145,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         /*
-         * Application Laravel/Collective...
+         * Providers Personales Agregados...
          */
-        Collective\Html\HtmlServiceProvider::class,
-        /*
-         * Providers Personal Sluggable...
-         */
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class, // Laravel/Collective...
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class, // Sluggable...
+        Laracasts\Flash\FlashServiceProvider::class, // Laracasts\Flash...
 
     ],
 
@@ -205,7 +203,8 @@ return [
          *   Aliases Personales.
          */
         'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class        
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Flash' => Laracasts\Flash\Flash::class
 
     ],
 
