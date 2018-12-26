@@ -6,8 +6,6 @@
 
 @section('content')
     <div class="container">
-        
-    
         <div class="jumbotron">
             <div class="container">
                 <h3 class="text-center">
