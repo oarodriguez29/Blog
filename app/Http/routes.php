@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::resource('users', 'UsersController'); // Ruta con Api-Restfull.
+    
+    // Ruta Particular para eliminar usuarios.
+    Route::get('users/{id}/destroy', [
+    	'uses'	=>	'UsersController@destroy',
+    	'as'	=>	'admin.users.destroy'
+    ]);
+});
