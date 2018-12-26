@@ -42,7 +42,7 @@
 			            		@endif
 			            	</td>
 			            	<td>
-			            		<a href="" class="btn btn-warning">
+			            		<a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning">
 			            			<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 			            		</a>
 			            		<a href="{{ route('admin.users.destroy', $user->id) }}" onclick="return confirm('¿Desea Eliminarlo?')" class="btn btn-danger">
