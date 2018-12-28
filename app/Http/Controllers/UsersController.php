@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\User;
 use Laracasts\Flash\Flash;
 
@@ -40,14 +41,15 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $user = new User($request->all());        
         $user->password = bcrypt($request->password);
         $user->save();
 
         // Agrego Mensaje de respuesta, con el paquete Laracast\Flash...
-        Flash::success('Se ha Registrado <b>'.$user->name.'</b> de Forma Exitosa!');
+        //Flash::success('Se ha Registrado <b>'.$user->name.'</b> de Forma Exitosa!');
+        flash()->overlay('Se ha Registrado <b>'.$user->name.'</b> de Forma Exitosa!', 'Usuario Registrado!');
 
         return redirect()->route('admin.users.index');
     }
@@ -88,9 +90,10 @@ class UsersController extends Controller
     {
         // Obtengo los Datos del usuario.
         $user = User::find($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->type = $request->type;        
+        $user->fill($request->all()); // Metodo Practico para capturar todos los datos.
+        /*$user->name = $request->name; ## equivale al Metodo fill();
+        $user->email = $request->email; ## equivale al Metodo fill();
+        $user->type = $request->type;*/ ## equivale al Metodo fill();
         $user->save(); // Guardo los datos en la BD.
 
         // Mensaje de exito.
