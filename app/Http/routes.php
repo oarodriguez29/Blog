@@ -16,11 +16,16 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::resource('users', 'UsersController'); // Ruta con Api-Restfull.
+	// Ruta de usuarios con Api-Restfull.
+    Route::resource('users', 'UsersController');
     
     // Ruta Particular para eliminar usuarios.
     Route::get('users/{id}/destroy', [
     	'uses'	=>	'UsersController@destroy',
     	'as'	=>	'admin.users.destroy'
     ]);
+
+	// Ruta de las categorias con Api-Restfull.
+    Route::resource('categories', 'CategoriesController'); 
+
 });
