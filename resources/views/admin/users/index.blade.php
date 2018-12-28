@@ -42,10 +42,10 @@
 			            		@endif
 			            	</td>
 			            	<td>
-			            		<a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning">
-			            			<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+			            		<a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning" title="Editar">
+			            			<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 			            		</a>
-			            		<a href="{{ route('admin.users.destroy', $user->id) }}" onclick="return confirm('¿Desea Eliminarlo?')" class="btn btn-danger">
+			            		<a href="{{ route('admin.users.destroy', $user->id) }}" onclick="return confirm('¿Desea Eliminarlo?')" class="btn btn-danger" title="Eliminar">
 			            			<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
 			            		</a>
 			            	</td>
