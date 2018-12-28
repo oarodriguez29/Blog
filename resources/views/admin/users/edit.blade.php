@@ -8,7 +8,7 @@
 		<div class="col-sm-3"></div>
 					
 			<div class="jumbotron col-sm-6">
-				<legend class="text-center">Editar Usuario <b>{{ $user->name }}</b></legend>			
+				<legend class="text-center">Editar Usuario <b class="label label-warning">{{ $user->name }}</b></legend>			
 				{!! Form::open(['route'=>['admin.users.update', $user],'method'=>'PUT']) !!}
 
 					<div class="form-group">
