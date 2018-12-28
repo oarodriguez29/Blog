@@ -6,9 +6,12 @@
 
 	<div class="container">
 		<div class="col-sm-3"></div>
-					
+
 			<div class="jumbotron col-sm-6">
-				<legend class="text-center">Creación de usuario</legend>			
+				<legend class="text-center">Creación de usuario</legend>
+				
+				@include('admin.template.partials.errors')
+
 				{!! Form::open(['route'=>'admin.users.store','method'=>'POST']) !!}
 
 					<div class="form-group">
