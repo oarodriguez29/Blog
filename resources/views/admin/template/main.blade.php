@@ -15,7 +15,7 @@
 		@include('flash::message')
 		@yield('message')
 	</section>
-	<section> {{-- Seccion de Contenido --}}
+	<section> {{-- Seccion de Contenido --}}		
 		@yield('content')
 	</section>
 
@@ -23,9 +23,12 @@
 	<script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 	{{-- BootTrap.js v3.3.7 --}}
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+	{{-- Mensajes con Ventana Modal Personalizado. --}}
+	<script>$('#flash-overlay-modal').modal();</script>
+
 	<script>
 		{{-- Oculta los mensajes o Alert "No Importantes" Mostrados al Usuario. --}}  
-		$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+		$('div.alert').not('.alert-important').delay(8000).fadeOut(350);
 	</script>
 </body>
 
