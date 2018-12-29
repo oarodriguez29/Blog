@@ -26,6 +26,12 @@ Route::group(['prefix' => 'admin'], function() {
     ]);
 
 	// Ruta de las categorias con Api-Restfull.
-    Route::resource('categories', 'CategoriesController'); 
+    Route::resource('categories', 'CategoriesController');
+
+    // Ruta Particular para eliminar usuarios.
+    Route::get('categories/{id}/destroy', [
+    	'uses'	=>	'CategoriesController@destroy',
+    	'as'	=>	'admin.categories.destroy'
+    ]);
 
 });
