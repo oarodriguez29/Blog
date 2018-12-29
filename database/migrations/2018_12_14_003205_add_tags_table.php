@@ -25,9 +25,11 @@ class AddTagsTable extends Migration
             $table->integer('tag_id')->unsigned();
 
             $table->foreign('article_id')->references('id') // Relacion Agregada.
-                ->on('articles');
+                ->on('articles')
+                ->onDelete('cascade');
             $table->foreign('tag_id')->references('id') // Relacion Agregada.
-                ->on('tags');
+                ->on('tags')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -39,6 +41,7 @@ class AddTagsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tags');
+        Schema::drop('article_tag'); // se debe borrar primero la tabla pivot = (relacion).
+        Schema::drop('tags'); // para luego poder borrar los tags asociados.
     }
 }
