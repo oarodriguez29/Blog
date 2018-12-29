@@ -19,7 +19,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index');
+        // Obtener Categorias a listar y pasarlas a la vista 'index'.
+        $categories = Category::orderBy('id', 'DESC')->paginate(5);
+
+        return view('admin.categories.index')->with('categories', $categories);
     }
 
     /**
@@ -42,8 +45,10 @@ class CategoriesController extends Controller
     {
         $category = new Category($request->all());
         $category->save();
-
-        flash()->overlay('La Categoria <b>'.$category->name.'</b> ha sido creada con Exito!');
+        /*msj con alert*/
+        Flash::success('La Categoria <b>'.$category->name.'</b> ha sido creada con Exito!');
+        /*msj con modal.*/
+        //flash()->overlay('La Categoria <b>'.$category->name.'</b> ha sido creada con Exito!');
 
         return redirect()->route('admin.categories.index');
     }
@@ -67,7 +72,10 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Obtenemos la Categoria.
+        $category = Category::find($id);
+        // Retornamos la vista 'edit' pasando los datos.
+        return view('admin.categories.edit')->with('category',$category);
     }
 
     /**
@@ -79,7 +87,15 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Obtengo los Datos de la categoria.
+        $category = Category::find($id);
+        $category->fill($request->all()); // Metodo Practico para capturar todos los datos.
+        $category->save(); // Guardo los datos en la BD.
+
+        // Mensaje de exito.
+        Flash::warning('La Categoria <b>'.$category->name.'</b> ha sido Actualizada con Exito!');
+        // retorno a la vista principal 'index'.
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -90,6 +106,12 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Obtenemos la categoria.
+        $category = Category::find($id);
+        // la eliminamos.
+        $category->delete();
+        // Mensaje de Error Mostrado al Usuario.
+        Flash::error('La Categoria <b> '.$category->name.'</b> ha sido Eliminada de Manera Exitosa!');
+        return redirect()->route('admin.categories.index'); // Redirecciono a la Vista 'index'.
     }
 }
