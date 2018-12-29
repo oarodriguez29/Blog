@@ -48,8 +48,10 @@ class UsersController extends Controller
         $user->save();
 
         // Agrego Mensaje de respuesta, con el paquete Laracast\Flash...
-        //Flash::success('Se ha Registrado <b>'.$user->name.'</b> de Forma Exitosa!');
-        flash()->overlay('Se ha Registrado <b>'.$user->name.'</b> de Forma Exitosa!', 'Usuario Registrado!');
+        /*msj con alert.*/
+        Flash::success('Se ha Registrado <b>'.$user->name.'</b> de Forma Exitosa!');
+        /*msj con modal.*/
+        //flash()->overlay('Se ha Registrado <b>'.$user->name.'</b> de Forma Exitosa!', 'Usuario Registrado!');
 
         return redirect()->route('admin.users.index');
     }
