@@ -35,7 +35,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            return redirect('/');
+            //return redirect('/'); // Linea Original //
+            return redirect()->route('admin.index'); // Linea Personalizada //
         }
 
         return $next($request);
