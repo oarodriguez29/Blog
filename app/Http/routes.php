@@ -11,11 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*	Route::get('/', function () {
+		    return view('welcome');
+		});*/
+	Route::get('/', [ 'as' => 'admin.index', function () {
+		    return view('welcome');
+		}]);		
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+
+	Route::get('/', [ 'as' => 'admin.index', function () {
+		    return view('welcome');
+		}]);
+
 	// Ruta de usuarios con Api-Restfull.
     Route::resource('users', 'UsersController');
     
@@ -27,11 +35,41 @@ Route::group(['prefix' => 'admin'], function() {
 
 	// Ruta de las categorias con Api-Restfull.
     Route::resource('categories', 'CategoriesController');
-
     // Ruta Particular para eliminar usuarios.
     Route::get('categories/{id}/destroy', [
     	'uses'	=>	'CategoriesController@destroy',
     	'as'	=>	'admin.categories.destroy'
     ]);
 
+	// Ruta de los Tags con Api-Restfull.
+    Route::resource('tags', 'TagsController');
+    // Ruta Particular para eliminar usuarios.
+    Route::get('tags/{id}/destroy', [
+    	'uses'	=>	'TagsController@destroy',
+    	'as'	=>	'admin.tags.destroy'
+    ]);
+
+	// Ruta de los Articulos con Api-Restfull.
+    Route::resource('articles', 'ArticlesController');
+    // Ruta Particular para eliminar usuarios.
+    Route::get('articles/{id}/destroy', [
+    	'uses'	=>	'ArticlesController@destroy',
+    	'as'	=>	'admin.articles.destroy'
+    ]);
+
 });
+// Ruta para iniciar session en el sistema.
+Route::get('admin/auth/login', [
+	'uses'	=>	'Auth\AuthController@getLogin',
+	'as'	=>	'admin.auth.login'
+]);
+// Ruta para el envio de datos al loguearse.
+Route::post('admin/auth/login', [
+	'uses'	=>	'Auth\AuthController@postLogin',
+	'as'	=>	'admin.auth.login'
+]);
+// Ruta para salir del sistema.
+Route::get('admin/auth/logout', [
+	'uses'	=>	'Auth\AuthController@getLogout',
+	'as'	=>	'admin.auth.logout'
+]);
