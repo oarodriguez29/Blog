@@ -9,38 +9,17 @@
 		<div class="container">
 		    <div class="table-responsive">
 			@section('message')
-
-			{{-- <div class="container"> --}}
-				
-			    	{{-- <div class=""> --}}
-			    		
-			    		<a href="{{ route('admin.tags.create') }}" class="btn btn-primary" title="Agregar Tags">Agregar +</a>
-			    	{{-- <div class="col-sm-3"> --}}
-			    		
-				    {{-- Buscador --}}
-				    	{!! Form::open(['route'=>'admin.tags.index', 'method'=>'GET', 'class'=>'navbar-form pull-right']) !!}
-				    		<div class="input-group">
-					    		{{-- {!! Form::label('buscador', 'Buscador') !!} --}}
-					    		{!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Buscar Tags...', 'aria-descripbedby'=>'search']) !!}
-				    			<span class="input-group-addon" id="search">
-				    				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-				    			</span>
-				    		</div>
-				    	{!! Form::close() !!}
-				    {{-- Fin del Buscador --}}
-			    	{{-- </div> --}}
-				    	
-			    	{{-- </div> --}}
-			    	
-					
-				    
-				    	
-				    
-				    
-				
-			   
-			{{-- </div> --}}
-
+			    <a href="{{ route('admin.tags.create') }}" class="btn btn-primary" title="Agregar Tags">Agregar +</a>
+				{{-- Buscador --}}
+				{!! Form::open(['route'=>'admin.tags.index', 'method'=>'GET', 'class'=>'navbar-form pull-right']) !!}
+					<div class="input-group">
+				   		{!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Buscar Tags...', 'aria-descripbedby'=>'search']) !!}
+						<span class="input-group-addon" id="search">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</span>
+					</div>
+				{!! Form::close() !!}
+				{{-- Fin del Buscador --}}
 		        <table class="table table-hover text-center">
 		          <thead>
 		            <tr>
