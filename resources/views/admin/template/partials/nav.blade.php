@@ -19,7 +19,7 @@
               <li class="active"><a href="/">Inicio</a></li>
               <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
               <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
-              <li><a href="#article">Articulos</a></li>
+              <li><a href="{{ route('admin.articles.index') }}">Articulos</a></li>
               <li><a href="#image">Imagenes</a></li>
               <li><a href="{{ route('admin.tags.index') }}">Tags</a></li>
 
