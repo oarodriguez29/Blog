@@ -13,6 +13,6 @@ class Image extends Model
 	// Relacion Establecida para los Articulos e Imagenes.
 	public function article()
 	{
-		return $this->belongdTo('App\Article');
+		return $this->belongsTo('App\Article');
 	}
 }
