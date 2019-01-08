@@ -4,9 +4,13 @@
 	<meta charset="utf-8">
 	<title>@yield('title', 'Default') | Panel de Administración</title>
 	{{-- BootsTrap.css v3.3.7 --}}
-	<link rel="stylesheet" type="text/css" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
+	{{-- Plugins Chosen V1.8.2 CSS --}}
+	<link rel="stylesheet" href="{{ asset('plugins/chosen_v1.8.2/chosen.css') }}">
 	{{-- Estilos CSS Personalizados --}}
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/estilos.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+	{{-- Plugins Trumbowyg v2.13.0 CSS --}}
+	<link rel="stylesheet" href="{{ asset('plugins/trumbowyg/ui/trumbowyg.css') }}">
 </head>
 <body>
 	@include('admin.template.partials.nav')
@@ -23,6 +27,12 @@
 	<script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 	{{-- BootTrap.js v3.3.7 --}}
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+	{{-- Plugins Chosen V1.8.2 JS --}}
+	<script src="{{ asset('plugins/chosen_v1.8.2/chosen.jquery.js') }}"></script>
+	{{-- Plugins Trumbowyg v2.13.0 JS --}}
+	<script src="{{ asset('plugins/trumbowyg/trumbowyg.js') }}"></script>
+	@yield('js') {{-- yiel creado para poder activar los js en las vistas --}}
+	{{-- FIN Plugins Chosen V1.8.2 JS FIN --}}
 	{{-- Mensajes con Ventana Modal Personalizado. --}}
 	<script>$('#flash-overlay-modal').modal();</script>
 
