@@ -43,4 +43,10 @@ class Article extends Model implements SluggableInterface
 	{
 		return $this->belongsToMany('App\Tag');
 	}
+
+	// Scope para realizar la busqueda de algun registro.
+	public function scopeSearch($query, $title)
+	{
+		return $query->where('title', 'LIKE', "%$title%");
+	}
 }
