@@ -20,10 +20,18 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        // Obtengo los datos de los Articulos.
+        $articles = Article::search($request->title)->orderBy('id','DESC')->paginate(2);
+        // Llamando a las Relaciones para los articulos
+        $articles->each(function($articles){
+            $articles->category; // obtengo la relacion articles/category.
+            $articles->user; // obtengo la relacion articles/user.
+        });
         // Retorno la Vista 'index'
-        return view('admin.articles.index');
+        return view('admin.articles.index')
+            ->with('articles',$articles);
     }
 
     /**
