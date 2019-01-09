@@ -11,42 +11,46 @@
 			@section('message')
 			    <a href="{{ route('admin.articles.create') }}" class="btn btn-primary" title="Agregar Articulos">Agregar +</a>
 				{{-- Buscador --}}
-			{{-- 	{!! Form::open(['route'=>'admin.tags.index', 'method'=>'GET', 'class'=>'navbar-form pull-right']) !!}
+				{!! Form::open(['route'=>'admin.articles.index', 'method'=>'GET', 'class'=>'navbar-form pull-right']) !!}
 					<div class="input-group">
-				   		{!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Buscar Tags...', 'aria-descripbedby'=>'search']) !!}
+				   		{!! Form::text('title', null, ['class'=>'form-control', 'placeholder'=>'Buscar Articulo...', 'aria-descripbedby'=>'search']) !!}
 						<span class="input-group-addon" id="search">
-							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							<button type="submit" class="glyphicon glyphicon-search"></button>
 						</span>
 					</div>
-				{!! Form::close() !!} --}}
+				{!! Form::close() !!}
 				{{-- Fin del Buscador --}}
 		        <table class="table table-hover text-center">
 		          <thead>
 		            <tr>
-		              <th class="text-center">Nº</th>
-		              <th class="text-center">Nombre</th>
+		              <th class="text-center">Nº Reg</th>
+		              <th class="text-center">Titulo</th>
+		              <th class="text-center">Categoria</th>
+		              <th class="text-center">Usuario</th>
 		              <th class="text-center">Acción</th>
 		            </tr>
 		          </thead>
 		          <tbody>
-		          {{--   @foreach ($tags as $tag)	            	
+		            @foreach ($articles as $artic)	            	
 			            <tr>
-			            	<td>{{ $tag->id }}</td>
-			            	<td>{{ $tag->name }}</td>
+			            	<td>{{ $artic->id }}</td>
+			            	<td>{{ $artic->title }}</td>
+			            	<td>{{ $artic->category->name }}</td>
+			            	<td>{{ $artic->user->name }}</td>
 			            	<td>
-			            		<a href="{{ route('admin.tags.edit', $tag->id) }}" class="btn btn-warning" title="Editar">
+			            		<a href="{{ route('admin.articles.edit', $artic->id) }}" class="btn btn-warning" title="Editar">
 			            			<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 			            		</a>
-			            		<a href="{{ route('admin.tags.destroy', $tag->id) }}" onclick="return confirm('¿Desea Eliminarlo?')" class="btn btn-danger" title="Eliminar">
+			            		<a href="{{ route('admin.articles.destroy', $artic->id) }}" onclick="return confirm('¿Desea Eliminarlo?')" class="btn btn-danger" title="Eliminar">
 			            			<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
 			            		</a>
 			            	</td>
 			            </tr>
-		            @endforeach --}}
+		            @endforeach
 		          </tbody>
 		        </table>
 		        <div class="container text-center">
-		        	{{-- {!! $tags->render() !!} --}}
+		        	{!! $articles->render() !!}
 		        </div>
 		    </div>
 		</div>
