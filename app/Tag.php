@@ -15,7 +15,7 @@ class Tag extends Model
 	{
 		return $this->belongsToMany('App\Article')->withTimestamps();
 	}
-
+	// Scope para realizar la busqueda de algun registro.
 	public function scopeSearch($query, $name)
 	{
 		return $query->where('name', 'LIKE', "%$name%");
