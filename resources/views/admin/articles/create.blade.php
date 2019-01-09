@@ -40,9 +40,12 @@
 					<br>
 
 					<div class="form-group">
-						{!! Form::submit('Agregar Articulo', ['class'=>'btn btn-success']) !!}
+						<button type="submit" class="btn btn-success">
+							<span class="glyphicon glyphicon-save"></span>
+						Agregar Articulo
+						</button>
 					</div>
-
+					
 				{!! Form::close() !!}
 			</div>		
     </div>
@@ -61,6 +64,8 @@
 			no_results_text: 'No Hay Resultados...'
 		});
 
-		$('.cont').trumbowyg();
+		$('.cont').trumbowyg({
+
+		});
 	</script>
 @endsection
