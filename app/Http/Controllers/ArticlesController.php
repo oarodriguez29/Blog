@@ -23,7 +23,7 @@ class ArticlesController extends Controller
     public function index(Request $request)
     {
         // Obtengo los datos de los Articulos.
-        $articles = Article::search($request->title)->orderBy('id','DESC')->paginate(2);
+        $articles = Article::search($request->title)->orderBy('id','DESC')->paginate(5);
         // Llamando a las Relaciones para los articulos
         $articles->each(function($articles){
             $articles->category; // obtengo la relacion articles/category.
@@ -78,10 +78,11 @@ class ArticlesController extends Controller
         // Guardo el articulo.
         $article->save();
 
-
-        // Luego de guardar el articulo rellenamos la Tabla Pivot ...
-        // llamando la Fn 'tags()' del modelo 'Article' y usando la Fn 'sync()' ...
-        // Para rellenar la Tabla Pivot
+        /* NOTA:
+         * Luego de guardar el articulo rellenamos la Tabla Pivot ...
+         * llamando la Fn 'tags()' del modelo 'Article' y usando la Fn 'sync()' ...
+         * Para rellenar la Tabla Pivot.
+        */
         $article->tags()->sync($request->tags);
 
         // Instancio la variable 'image'.
@@ -94,7 +95,7 @@ class ArticlesController extends Controller
         // guardo la imagen.
         $image->save();
         // Mensaje a Mostrar.
-        Flash::success('Se ha Creado el Articulo <b>'.$article->title.'</b> de Forma Satisfactoria!');
+        Flash::success('Se ha Creado el Articulo <b>"'.$article->title.'"</b> de Forma Satisfactoria!');
         // Redireccionamiento a la Vista 'admin.articles.index'
         return redirect()->route('admin.articles.index');
 
@@ -119,7 +120,31 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Obtengo el articulo.
+        $article = Article::find($id);
+        // Obtengo la relacion entre articulos / categorias.
+        $article->category; // (ver Fn's del modelo 'Article').
+        // Obtengo la Relacion entre articulos / tags en forma de array.
+        /*
+         * NOTA: para Obtener los tags y pasarlos a la vista, se necesita 
+         * convertirlo en array y esto se logra primero usando la Fn 'list()'
+         * para capturar solo el campo que se necesita (este caso el id) y
+         * luego con la Fn 'ToArray()' transformamos la coleccion en un simple
+         * Array y listo podemos pasar la variable 'array_tags' a la vista.
+        */
+        $array_tags = $article->tags->lists('id')->ToArray(); // (ver Fn's del modelo 'Article').
+
+        // Obtengo los datos de la categoria para pasarlos a la vista.
+        $categories = Category::orderBy('name','ASC')
+            ->lists('name','id'); // Fn 'lists()' = crea arreglo del objeto 'Category::'.
+        $tags = Tag::orderBy('name','ASC')
+            ->lists('name','id'); // Fn 'lists()' = crea arreglo del objeto 'Tag::'.
+        // Retorno la Vista 'edit'.
+        return view('admin.articles.edit')
+            ->with('categories', $categories)
+            ->with('article',$article)
+            ->with('tags',$tags)
+            ->with('array_tags',$array_tags);
     }
 
     /**
@@ -131,7 +156,25 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Obtengo los datos del articulo.
+        $article = Article::find($id);
+        // Metodo Practico para capturar todos los datos del articulo.
+        $article->fill($request->all());
+        // Guardo datos en la BD.
+        $article->save();
+
+        /* NOTA:
+         * Luego de guardar el articulo rellenamos la Tabla Pivot ...
+         * llamando la Fn 'tags()' del modelo 'Article' y usando la Fn 'sync()' ...
+         * Para rellenar la Tabla Pivot.
+        */
+        $article->tags()->sync($request->tags);
+
+        // Mensaje de exito.
+        Flash::warning('El Articulo <b>'.$article->title.'</b> ha sido Actualizado con Exito!');
+        // retorno a la vista principal 'index'.
+        return redirect()->route('admin.articles.index');
+
     }
 
     /**
@@ -142,6 +185,12 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Obtenemos el articulo.
+        $article = Article::find($id);
+        // lo eliminamos.
+        $article->delete();
+        // Mensaje de Error Mostrado al Usuario.
+        Flash::error('El Articulo <b> '.$article->title.'</b> ha sido Eliminado de Manera Exitosa!');
+        return redirect()->route('admin.articles.index'); // Redirecciono a la Vista 'index'.
     }
 }
