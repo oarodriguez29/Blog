@@ -11,12 +11,15 @@
 |
 */
 
-/*	Route::get('/', function () {
-		    return view('welcome');
-		});*/
-	Route::get('/', [ 'as' => 'admin.index', function () {
-		    return view('welcome');
-		}]);		
+/* RUTAS Para el FrondEnt */
+
+	Route::get('/', [ 
+		'uses' => 'FrontController@index',
+		'as' => 'front.index'
+	]);		
+
+
+/* RUTAS Para el Panel de Administracion. */
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
