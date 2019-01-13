@@ -20,7 +20,7 @@ class UsersController extends Controller
     public function index()
     {
         // Ordeno el Listado y Aplico metodo de paginación.
-        $users = User::orderBy('id','ASC')->paginate(5);
+        $users = User::orderBy('id','DESC')->paginate(5);
         // Retorno la Vista "index" pasando los datos.
         return view('admin.users.index')->with('users', $users);
     }
