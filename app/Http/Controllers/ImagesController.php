@@ -18,7 +18,7 @@ class ImagesController extends Controller
     public function index()
     {
         // Obtengo los datos de las imagenes.
-        $images = Image::all();
+        $images = Image::orderBy('id','DESC')->paginate(8);
         /* NOTA:
          * Recorrido de las imagenes con la Fn 'each()' para Obtener 
          * la Relacion entre Imagenes / Articulos.
