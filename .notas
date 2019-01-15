@@ -1,0 +1,167 @@
+-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o--o-o-oo-o-o-o-o-o-o-o--o-o-o-o--o-o-o-o-o-o-o--o-o-o-o-o-o-o-o-
+=============================================================================================
+
+fecha: 17/12/2018 -- Corregido --
+
+Quede en el videoTutorial nº12 de codigo-facilito, no se termino de instalar el paquete Sluggable ejecutado desde composer -> se debe hacer un "composer update" para continuar con el videotutorial.
+
+Nota: el service provider Sluggable agregado en App/config/app arroja error ver pagina de GitHub -> https://github.com/cviebrock/eloquent-sluggable#installation.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o--o-o-oo-o-o-o-o-o-o-o--o-o-o-o--o-o-o-o-o-o-o--o-o-o-o-o-o-o-o-
+=============================================================================================
+
+fecha 19/12/2018
+
+Quede en el VideoTutorial nº13 de codigo-facilito...
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 20/12/2018 -- Corregido --
+
+Quede en el VideoTutorial nº14 de codigo-facilito...
+
+en el formulario de crear usuario hay un detalle en el select, en la BD se guarda el valor por defecto.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 25/12/2018
+
+Quede en el VideoTutorial nº 18. -- Ready --
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 26/12/2018
+
+Quede en el VideoTutorial nº 20. -- NOTA: Flato Montar los cambios al Repositorio Git (ver videos 18-19, para hacer el commit bien) --
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 28/12/2018
+
+Quede en el VideoTutorial nº 22. -- Ready --
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 29/12/2018 -- corregido --
+
+Quede en el VideoTutorial nº 23. -- Nota: Hay un detalle con la ruta 'admin.index', revisar bien ver videotuto nº 22 --
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 02/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 24.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 03/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 26.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 04/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 27. -- Nota: Ingresar a la comunidad de codigo facilito por Slack -- 
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 06/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 28. -- Nota: Ingresar a la comunidadfacilito por Slack -- 
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 07/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 29.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 08/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 30.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 10/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 32. NOTA: es posible cargar varias imagenes en el formulario de
+Articulos solo se debe integrar el plugins Jquery (Multifile) 
+-> (ver VideoTutorial nº 31 para los tips).
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 11/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 34.
+
+NOTA: Comandos Aprendidos:
+	-> php artisan make:seeder nombre_del_seeder => para crear Seeder.
+	-> php artisan db:seed => para Aplicar los Seeder creados.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 12/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 35.
+
+NOTA: Lo Aprendidos:
+	-> Se Trabajo con las Fechas en los Articulos.
+	-> Se Ejecuto el Comando 'composer require nesbot/carbon' -> para instalar la API Carbon.
+	-> API Carbon => Una simple extensión de la API de PHP para DateTime.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 14/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 39.
+
+NOTA: Lo Trabajado: (View Composer), (filtrado por categorias y tags), (Integracion de disqus)
+		& (Filtrado de usuarios tipo 'admin' con middleware parte-1).
+
+NOTA: Lo Aprendidos:
+	-> Se Trabajo con la carga de Datos a las Vistas con los ServiceProvider delper (View).
+
+	-> Se Ejecuto el Comando 'php artisan make:provider ComposerServiceProvider' 
+		-> para crear el provider para ser usado en el envio de datos.
+
+	-> Se ejecuto el comando 'composer dump-autoload' -> en caso de no cargar la data en la
+		-> vista se ejecuta este comando para generar los archivos nuevamente.
+
+	-> Se Integro disqus para los comentarios en los articulos.
+
+	-> Se ejecuto el comando 'php artisan make:middleware Admin' -> Para crear el Middleware
+		-> 'Admin' y ser usado en el filtrado de usuarios tipo admin.
+	
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
+
+fecha 15/01/2019 -- Ready --
+
+Quede en el VideoTutorial nº 41. -- Aun no descargado --
+
+NOTA: Lo Aprendidos:
+	-> Se Trabajo con las Traducciones (Lenguage).
+	-> Se uso el Helper 'trans()' de Laravel, para dichas traducciones.
+
+==============================================================================================
+-o-o-o-o-o-oo--o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-
