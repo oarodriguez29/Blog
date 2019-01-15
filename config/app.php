@@ -151,6 +151,12 @@ return [
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class, // Sluggable...
         Laracasts\Flash\FlashServiceProvider::class, // Laracasts\Flash...
 
+        /*
+         * Providers Creado para cargar datos en las vistas Directamente,
+         * sin necesidad de pasarlos desde un controlador a la vista...
+         */
+        App\Providers\ComposerServiceProvider::class,
+
     ],
 
     /*
