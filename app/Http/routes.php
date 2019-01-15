@@ -36,20 +36,26 @@
 
 /* RUTAS Para el Panel de Administracion. */
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 	Route::get('/', [ 'as' => 'admin.index', function () {
 		    return view('welcome');
 		}]);
 
-	// Ruta de usuarios con Api-Restfull.
-    Route::resource('users', 'UsersController');
-    
-    // Ruta Particular para eliminar usuarios.
-    Route::get('users/{id}/destroy', [
-    	'uses'	=>	'UsersController@destroy',
-    	'as'	=>	'admin.users.destroy'
-    ]);
+	/* NOTA: aca se indica que los usuarios de tipo 'member'
+	 * no podran acceder al modulo de usuarios por seguridad.
+	 */
+	Route::group(['middleware' => 'admin'], function() {
+		// Ruta de usuarios con Api-Restfull.
+	    Route::resource('users', 'UsersController');
+	    
+	    // Ruta Particular para eliminar usuarios.
+	    Route::get('users/{id}/destroy', [
+	    	'uses'	=>	'UsersController@destroy',
+	    	'as'	=>	'admin.users.destroy'
+	    ]);
+	});
+
 
 	// Ruta de las categorias con Api-Restfull.
     Route::resource('categories', 'CategoriesController');
