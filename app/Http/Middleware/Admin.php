@@ -40,7 +40,8 @@ class Admin
         if ($this->auth->user()->Admin()) {
             return $next($request);
         }else{
-            dd("Acceso Negado!!");
+            abort(401);
+            
         }
         
     }
