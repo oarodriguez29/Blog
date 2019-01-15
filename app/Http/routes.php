@@ -16,12 +16,27 @@
 	Route::get('/', [ 
 		'uses' => 'FrontController@index',
 		'as' => 'front.index'
-	]);		
+	]);
+
+	Route::get('categories/{name}', [
+		'uses'	=>	'FrontController@searchCategory',
+		'as'	=>	'front.search.category'
+	]);
+
+	Route::get('tags/{name}', [
+		'uses'	=> 'FrontController@searchTag',
+		'as'	=>	'front.search.tag'
+	]);
+
+	Route::get('articles/{slug}', [
+		'uses'	=> 	'FrontController@viewArticle',
+		'as'	=>	'front.view.article'
+	]);
 
 
 /* RUTAS Para el Panel de Administracion. */
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
 
 	Route::get('/', [ 'as' => 'admin.index', function () {
 		    return view('welcome');
