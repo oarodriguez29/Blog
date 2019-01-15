@@ -42,4 +42,10 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Article');
     }
+
+    // Metodo creado para retornar el Tipo user -> 'admin' -> Administrador.
+    public function Admin()
+    {
+        return $this->type === 'admin';
+    }
 }
