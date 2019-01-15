@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
 	{{-- Estilos CSS Personalizados --}}
 {{-- 	<link rel="stylesheet" href="{{ asset('css/estilos.css') }}"> --}}
-	<link rel="stylesheet" href="{{ asset('path') }}">
 </head>
 <body>
 	<header>
