@@ -4,7 +4,7 @@
 	
 	<div class="row">
 		<div class="col-md-8">
-			<h3 class="text-center">Ultimos Articulos</h3>
+			<h3 class="text-center">{{ trans('app.title_last_articles') }}</h3>
 			<div class="row">
 
 				@foreach($articles as $art)
